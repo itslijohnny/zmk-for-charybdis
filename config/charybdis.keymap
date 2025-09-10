@@ -13,6 +13,11 @@
 #define SMART_NUM &smart_num NUM 0
 #define CANCEL    &kp K_CANCEL            // Cancel caps-word & auto-layers.
 
+&hid_trackball_interface {
+    automouse-layer = <6>;
+    automouse-layer-timeout-ms = <600>;
+    scroll-layers = <3>;
+};
 / {
     behaviors {
         
@@ -445,12 +450,6 @@
 
             label = "MAC_SAVE";
         };
-    };
-
-    &hid_trackball_interface {
-        automouse-layer = <6>;
-        automouse-layer-timeout-ms = <600>;
-        scroll-layers = <3>;
     };
 
     keymap {
