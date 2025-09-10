@@ -433,12 +433,12 @@
 
         mlclk {
             bindings = <&mkp LCLK>;
-            key-positions = <1 2>;
+            key-positions = <21 22>;
         };
 
         mrclk {
             bindings = <&mkp RCLK>;
-            key-positions = <2 3>;
+            key-positions = <22 23>;
         };
     };
 
