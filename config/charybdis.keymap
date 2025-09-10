@@ -1,9 +1,9 @@
 #include <behaviors/num_word.dtsi>
+#include <interfaces/hid-trackball.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <interfaces/hid-trackball.dtsi>
 
 /* Global defaults */
 
@@ -18,9 +18,9 @@
     automouse-layer-timeout-ms = <600>;
     scroll-layers = <3>;
 };
+
 / {
     behaviors {
-        
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
             label = "HML";
@@ -487,9 +487,9 @@
 
         nav_layer {
             bindings = <
-&trans  &trans          &kp UP_ARROW    &trans            &kp PG_UP    &kp HOME  &trans           &kp UP_ARROW          &trans           &trans
-&trans  &hml LALT LEFT  &hml LCMD DOWN  &hml LSHFT RIGHT  &kp PG_DN    &kp END   &hmr RSHFT LEFT  &hmr RCMD DOWN_ARROW  &hmr RALT RIGHT  &trans
-&trans  &trans          &trans          &trans            &trans       &trans    &trans           &trans                &trans           &trans
+&trans  &trans          &kp UP_ARROW    &trans            &kp PG_UP    &kp HOME  &trans               &kp LC(UP_ARROW)          &trans               &trans
+&trans  &hml LALT LEFT  &hml LCMD DOWN  &hml LSHFT RIGHT  &kp PG_DN    &kp END   &hmr RSHFT LG(LEFT)  &hmr RCMD LC(DOWN_ARROW)  &hmr RALT LG(RIGHT)  &trans
+&trans  &trans          &trans          &trans            &trans       &trans    &kp LA(LG(LEFT))     &trans                    &kp LG(LA(RIGHT))    &trans
                         &trans          &trans            &trans       &trans    &trans
             >;
 
@@ -516,6 +516,15 @@
             >;
 
             label = "SYS";
+        };
+
+        mouse {
+            bindings = <
+&trans  &trans  &trans  &trans     &trans       &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &mkp LCLK  &mkp RCLK    &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans       &trans     &trans     &trans  &trans  &trans
+                &trans  &trans     &trans       &mkp LCLK  &mkp RCLK
+            >;
         };
     };
 };
