@@ -13,10 +13,21 @@
 #define SMART_NUM &smart_num NUM 0
 #define CANCEL    &kp K_CANCEL            // Cancel caps-word & auto-layers.
 
+/* Layer indices for readability (keep order in sync with keymap declaration) */
+#define L_BASE   0  // base_layer (ColemakDH)
+#define L_QWERT  1  // qwert_layer
+#define L_NUM    2  // num_layer
+#define L_NAV    3  // nav_layer
+#define L_FUN    4  // fn_layer (FUN)
+#define L_SYS    5  // sys_layer (SYS)
+#define L_MOUSE  6  // mouse layer
+
 &hid_trackball_interface {
-    automouse-layer = <6>;
-    automouse-layer-timeout-ms = <600>;
-    scroll-layers = <3>;
+    /* Auto-mouse will shift to the dedicated mouse layer after timeout */
+    automouse-layer = <L_MOUSE>;
+    automouse-layer-timeout-ms = <600>; /* Adjust if triggering too soon/late */
+    /* Pointer motion becomes scroll when any of these layers are active */
+    scroll-layers = <L_NAV>;            /* Add L_MOUSE here if you want scroll on mouse layer too */
 };
 
 / {
