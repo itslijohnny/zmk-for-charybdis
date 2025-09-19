@@ -480,9 +480,9 @@
 
         nav_layer {
             bindings = <
-&trans  &trans          &kp UP_ARROW    &trans            &kp PG_UP    &kp HOME  &trans               &kp LC(UP_ARROW)          &trans               &trans
-&trans  &hml LALT LEFT  &hml LCMD DOWN  &hml LSHFT RIGHT  &kp PG_DN    &kp END   &hmr RSHFT LG(LEFT)  &hmr RCMD LC(DOWN_ARROW)  &hmr RALT LG(RIGHT)  &trans
-&trans  &trans          &trans          &trans            &trans       &trans    &kp LA(LG(LEFT))     &trans                    &kp LG(LA(RIGHT))    &trans
+&trans  &trans          &kp UP_ARROW    &trans            &kp PG_UP    &kp HOME  &trans            &kp UP_ARROW          &trans             &trans
+&trans  &hml LALT LEFT  &hml LCMD DOWN  &hml LSHFT RIGHT  &kp PG_DN    &kp END   &hmr RSHFT LEFT   &hmr RCMD DOWN_ARROW  &hmr RALT RIGHT    &trans
+&trans  &trans          &trans          &trans            &trans       &trans    &kp LA(LG(LEFT))  &trans                &kp LG(LA(RIGHT))  &trans
                         &trans          &trans            &trans       &trans    &trans
             >;
 
@@ -513,10 +513,10 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans     &trans       &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &mkp LCLK  &mkp RCLK    &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans       &trans     &trans     &trans  &trans  &trans
-                &trans  &trans     &trans       &mkp LCLK  &mkp RCLK
+&trans  &trans  &trans  &trans     &trans       &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &mkp LCLK  &mkp RCLK    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans       &trans  &trans  &trans  &trans  &trans
+                &trans  &trans     &mo 3        &trans  &trans
             >;
         };
     };
