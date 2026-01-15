@@ -424,14 +424,24 @@
             key-positions = <30 31>;
         };
 
-        mlclk {
-            bindings = <&mkp LCLK>;
+        mrclk {
+            bindings = <&mkp RCLK>;
             key-positions = <21 22>;
         };
 
-        mrclk {
-            bindings = <&mkp RCLK>;
+        mlclk {
+            bindings = <&mkp LCLK>;
             key-positions = <22 23>;
+        };
+
+        rmlck {
+            bindings = <&mkp LCLK>;
+            key-positions = <26 27>;
+        };
+
+        rmrck {
+            bindings = <&mkp RCLK>;
+            key-positions = <27 28>;
         };
     };
 
