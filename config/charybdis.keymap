@@ -9,7 +9,6 @@
 #define QUICK_TAP_MS 175
 #define NUM 2
 
-=
 / {
     behaviors {
         hml: hml {
