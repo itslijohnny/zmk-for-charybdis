@@ -270,13 +270,13 @@
 
         l_br {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <27 26>;
+            key-positions = <6 7>;
             require-prior-idle-ms = <150>;
         };
 
         r_br {
             bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <27 28>;
+            key-positions = <7 8>;
             require-prior-idle-ms = <150>;
         };
 
