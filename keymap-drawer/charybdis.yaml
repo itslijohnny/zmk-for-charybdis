@@ -36,7 +36,7 @@ layers:
   - {t: TAB, h: NAV}
   - {t: ENTER, h: NAV}
   - {t: BACKSPACE, h: NUM, s: DEL}
-  QWERT:
+  QWERTY:
   - Q
   - W
   - E
@@ -319,7 +319,7 @@ combos:
 - p: [13, 20]
   k: Ctl+T
 - p: [24, 25]
-  k: {t: QWERT, h: toggle}
+  k: {t: QWERTY, h: toggle}
 - p: [2, 10]
   k: Ctl+F
 - p: [10, 12]
