@@ -1,17 +1,84 @@
-if SHIELD_CHARYBDIS_RIGHT
-
-config ZMK_KEYBOARD_NAME
-	default "Charybdis"
-
-config ZMK_SPLIT_BLE_ROLE_CENTRAL
-	default y
-
-endif
-
-if SHIELD_CHARYBDIS_LEFT || SHIELD_CHARYBDIS_RIGHT
+if SHIELD_CHARYBDIS_LEFT || SHIELD_CHARYBDIS_RIGHT || SHIELD_CHARYBDIS_CENTRAL_DONGLE
 
 config ZMK_SPLIT
 	default y
 
-endif
+
+endif # SHIELD_CHARYBDIS_LEFT || SHIELD_CHARYBDIS_RIGHT || SHIELD_CHARYBDIS_CENTRAL_DONGLE
+
+if SHIELD_CHARYBDIS_CENTRAL_DONGLE
+
+if ZMK_DISPLAY
+
+config I2C
+	default y
+
+config SSD1306
+	default y
+
+choice ZMK_DISPLAY_WORK_QUEUE
+	default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
+endchoice
+
+endif # ZMK_DISPLAY
+
+if SSD1306
+
+config LV_Z_VDB_SIZE
+    default 64
+
+config LV_DPI_DEF
+    default 148
+
+config LV_Z_BITS_PER_PIXEL
+    default 1
+
+choice LV_COLOR_DEPTH
+    default LV_COLOR_DEPTH_1
+endchoice
+
+endif # SSD1306
+
+endif # SHIELD_CHARYBDIS_CENTRAL_DONGLE
+
+# Left side is always peripheral
+if SHIELD_CHARYBDIS_LEFT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default n
+
+endif # SHIELD_CHARYBDIS_LEFT
+
+# Right side is central in standalone mode (when no dongle is present)
+# When using dongle, flash right as peripheral by building with dongle config
+if SHIELD_CHARYBDIS_RIGHT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+if ZMK_SPLIT_ROLE_CENTRAL
+
+config ZMK_KEYBOARD_NAME
+    default "Charybdis"
+
+endif # ZMK_SPLIT_ROLE_CENTRAL
+
+endif # SHIELD_CHARYBDIS_RIGHT
+
+# Dongle is always central when present
+if SHIELD_CHARYBDIS_CENTRAL_DONGLE
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+if ZMK_SPLIT_ROLE_CENTRAL
+
+config ZMK_KEYBOARD_NAME
+    default "Charybdis"
+
+endif # ZMK_SPLIT_ROLE_CENTRAL
+
+endif # SHIELD_CHARYBDIS_CENTRAL_DONGLE
+
+
 

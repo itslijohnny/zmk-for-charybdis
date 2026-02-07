@@ -460,6 +460,7 @@
 
         base_layer {
             label = "ColemakDH";
+            display-name = "ColemakDH";
             bindings = <
 &kp Q         &kp W        &kp F          &kp P               &kp B         &kp J         &kp L                &kp U        &kp Y        &kp SQT
 &hml LCTRL A  &hml LALT R  &hml LGUI S    &hmsl LEFT_SHIFT T  &kp G         &kp M         &hmsr RIGHT_SHIFT N  &hmr RGUI E  &hmr LALT I  &hmr RCTRL O
@@ -470,6 +471,7 @@
 
         qwert_layer {
             label = "QWERT";
+            display-name = "QWERTY";
             bindings = <
 &kp Q         &kp W        &kp E          &kp R              &kp T         &kp Y         &kp U               &kp I        &kp O        &kp P
 &hml LCTRL A  &hml LALT S  &hml LGUI D    &hml LEFT_SHIFT F  &kp G         &kp H         &hmr RIGHT_SHIFT J  &hmr RGUI K  &hmr LALT L  &hmr RCTRL SQT
@@ -480,6 +482,7 @@
 
         num_layer {
             label = "NUM";
+            display-name = "NUM";
             bindings = <
 &trans  &kp N7              &kp N8        &kp N9         &trans        &trans  &trans  &trans  &trans  &trans
 &trans  &hml LALT NUMBER_4  &hml LGUI N5  &hml LSHFT N6  &kp N0        &trans  &trans  &trans  &trans  &trans
@@ -497,6 +500,7 @@
             >;
 
             label = "NAV";
+            display-name = "NAV";
         };
 
         fn_layer {
@@ -508,6 +512,7 @@
             >;
 
             label = "FUN";
+            display-name = "FUN";
         };
 
         sys_layer {
@@ -519,6 +524,7 @@
             >;
 
             label = "SYS";
+            display-name = "SYS";
         };
 
         mouse {
