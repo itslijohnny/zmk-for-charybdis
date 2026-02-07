@@ -18,14 +18,15 @@
         rows = <0>;
         events = <0>;
     };
-};
-
     backlight: pwmleds {
         compatible = "pwm-leds";
         pwm_led_0 {
             pwms = <&pwm0 0 PWM_MSEC(1) PWM_POLARITY_NORMAL>;
         };
     };
+};
+
+
 
 
 &pinctrl {
