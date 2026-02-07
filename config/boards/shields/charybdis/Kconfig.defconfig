@@ -49,23 +49,15 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif # SHIELD_CHARYBDIS_LEFT
 
-# Right side is central in standalone mode (when no dongle is present)
-# When using dongle, flash right as peripheral by building with dongle config
+# Right side is always peripheral (dongle mode only)
 if SHIELD_CHARYBDIS_RIGHT
 
 config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-if ZMK_SPLIT_ROLE_CENTRAL
-
-config ZMK_KEYBOARD_NAME
-    default "Charybdis"
-
-endif # ZMK_SPLIT_ROLE_CENTRAL
+    default n
 
 endif # SHIELD_CHARYBDIS_RIGHT
 
-# Dongle is always central when present
+# Dongle is always central
 if SHIELD_CHARYBDIS_CENTRAL_DONGLE
 
 config ZMK_SPLIT_ROLE_CENTRAL

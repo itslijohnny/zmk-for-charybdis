@@ -1,30 +1,19 @@
 zmk-config for charybdis (4x6)
 
-## Build Configurations
+## Configuration
 
-This keyboard supports two usage modes. **You must flash different firmware depending on which mode you want to use.**
+This keyboard uses a 3-device setup with a central dongle:
 
-### Mode 1: Standalone (2 halves, no dongle)
 - **Left half**: Peripheral
-- **Right half**: Central (connects to PC via USB)
-- **Flash firmware**:
-  - Left: `charybdis_left_standalone.uf2`
-  - Right: `charybdis_right_standalone.uf2`
-
-### Mode 2: With Central Dongle (3 devices)
-- **Left half**: Peripheral
-- **Right half**: Peripheral
+- **Right half**: Peripheral (with trackball)
 - **Dongle**: Central (connects to PC via USB, includes OLED display)
-- **Flash firmware**:
-  - Left: `charybdis_left_dongle.uf2`
-  - Right: `charybdis_right_dongle.uf2`
-  - Dongle: `charybdis_central_dongle_oled.uf2`
 
-### Switching Between Modes
+### Flashing Firmware
 
-To switch from standalone to dongle mode (or vice versa):
-1. Download the appropriate firmware builds from GitHub Actions
-2. Reflash the **right half** with the correct version (`standalone` or `dongle`)
-3. The left half firmware is identical for both modes, but separate builds are provided for clarity
+Flash the firmware from GitHub Actions to each device:
 
-**Note**: The trackball is physically located on the right half and functions in both modes. Input is automatically forwarded from peripherals to the central device.
+1. **Left half**: `nice_nano_v2-charybdis_left-zmk.uf2`
+2. **Right half**: `nice_nano_v2-charybdis_right-zmk.uf2`
+3. **Dongle**: `nice_nano_v2-charybdis_central_dongle_dongle_display-zmk.uf2`
+
+**Note**: The trackball is physically located on the right half. Input from both peripherals (including trackball events) is automatically forwarded to the central dongle, which then sends all data to your PC.
