@@ -13,5 +13,8 @@ if SHIELD_CHARYBDIS_LEFT || SHIELD_CHARYBDIS_RIGHT
 config ZMK_SPLIT
 	default y
 
+config ZMK_SPLIT_BLE_ROLE_PERIPHERAL
+	default y
+
 endif
 
