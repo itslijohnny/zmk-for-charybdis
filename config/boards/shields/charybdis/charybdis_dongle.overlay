@@ -15,8 +15,10 @@
         zephyr,display = &oled;
     };
     mock_kscan: kscan_1 {
-        compatible = "zmk,kscan-gpio-direct";
-        input-gpios = <>;
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
     };
     backlight: pwmleds {
         compatible = "pwm-leds";
