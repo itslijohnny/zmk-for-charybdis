@@ -6,8 +6,7 @@
  
 #include "charybdis.dtsi"
 #include "charybdis_3610.dtsi"
-#include "charybdis_zplit.dtsi"
-#include <dt-bindings/zmk/input_transform.h>
+
 
 &default_transform {
     col-offset = <5>;
