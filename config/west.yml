@@ -15,7 +15,7 @@ manifest:
       import: app/west.yml
     - name: zmk-auto-layer
       remote: urob
-      revision: v0.1 # set to same version as zmk
+      revision: v0.3 # set to same version as zmk
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: zmk-0.3
