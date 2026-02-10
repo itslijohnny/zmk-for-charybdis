@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: urob
       url-base: https://github.com/urob
-    - name: englmaxi
-      url-base: https://github.com/englmaxi
+    - name: itslijohnny
+      url-base: https://github.com/itslijohnny
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -20,7 +20,7 @@ manifest:
       remote: badjeff
       revision: zmk-0.3
     - name: zmk-dongle-display
-      remote: englmaxi
+      remote: itslijohnny
       revision: v0.3
   self:
     path: config
