@@ -21,6 +21,6 @@ manifest:
       revision: zmk-0.3
     - name: zmk-dongle-display
       remote: itslijohnny
-      revision: v0.3
+      revision: v0.3-updated
   self:
     path: config
