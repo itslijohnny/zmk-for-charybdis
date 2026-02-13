@@ -58,9 +58,12 @@
 
     split_inputs {
         compatible = "zmk,input-split-collection";
+        #address-cells = <1>;
+        #size-cells = <0>;
 
         trackball_split: input_split_0 {
             compatible = "zmk,input-split";
+            reg = <0>;
         };
     };
 };
