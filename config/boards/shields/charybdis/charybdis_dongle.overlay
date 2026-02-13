@@ -6,7 +6,6 @@
 */
 
 #include "charybdis.dtsi"
-#include "charybdis_3610.dtsi"
 
 /delete-node/ &kscan0;
 
@@ -27,32 +26,32 @@
 &pinctrl {
     i2c0_default: i2c0_default {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 25)>,
-                <NRF_PSEL(TWIM_SCL, 1, 0)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                <NRF_PSEL(TWIM_SCL, 0, 20)>;
         };
     };
 
     i2c0_sleep: i2c0_sleep {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 25)>,
-                <NRF_PSEL(TWIM_SCL, 1, 0)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0,17)>,
+                <NRF_PSEL(TWIM_SCL, 0, 20)>;
             low-power-enable;
         };
     };	
     
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,
+            psels = <NRF_PSEL(SPIM_SCK, 0, 20)>,
                 <NRF_PSEL(SPIM_MOSI, 0, 17)>,
-                <NRF_PSEL(SPIM_MISO, 0, 17)>;
+                <NRF_PSEL(SPIM_MISO, 0, 25)>;
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,
+            psels = <NRF_PSEL(SPIM_SCK, 0, 20)>,
                 <NRF_PSEL(SPIM_MOSI, 0, 17)>,
-                <NRF_PSEL(SPIM_MISO, 0, 17)>;
+                <NRF_PSEL(SPIM_MISO, 0, 25)>;
             low-power-enable;
         };
     };
@@ -81,28 +80,6 @@
         };
     };
 }; 
-
-&spi0 {
-    status = "okay";
-    compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 20 GPIO_ACTIVE_LOW>;
-
-    trackball: trackball@0 {
-        compatible = "pixart,pmw3610";
-        status = "okay";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <600>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-    };
-};
-
 &spi3 {
     compatible = "nordic,nrf-spim";
     status = "okay";
@@ -145,4 +122,11 @@
         inversion-on;
         prechargep = <0x22>;
 	};
+};
+
+/ {
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
 };
