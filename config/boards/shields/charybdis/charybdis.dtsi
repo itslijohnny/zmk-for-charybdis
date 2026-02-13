@@ -57,12 +57,10 @@
     };
 
     split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
+        compatible = "zmk,input-split-collection";
 
-        trackball_split: trackball_split@0 {
+        trackball_split: input_split_0 {
             compatible = "zmk,input-split";
-            reg = <0>;
         };
     };
 };
