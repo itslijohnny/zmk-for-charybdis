@@ -29,7 +29,7 @@ layers:
   - K
   - H
   - {t: ',', s: ;}
-  - {t: ., s: ':'}
+  - {t: ., s: '&colon_macro'}
   - {t: '!', s: '?'}
   - {t: ESCAPE, h: FUN}
   - {t: SPACE, h: NUM}
@@ -65,7 +65,7 @@ layers:
   - N
   - M
   - {t: ',', s: ;}
-  - {t: ., s: ':'}
+  - {t: ., s: '&colon_macro'}
   - {t: '!', s: '?'}
   - {t: ESCAPE, h: FUN}
   - {t: SPACE, h: NUM}
