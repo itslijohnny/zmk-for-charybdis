@@ -68,7 +68,7 @@
         dot_col: dot_col {
             compatible = "zmk,behavior-mod-morph";
             label = "DOT_COL";
-            bindings = <&kp PERIOD>, <&kp COLON>;
+            bindings = <&kp PERIOD>, <&colon_macro>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -452,6 +452,15 @@
             bindings = <&none>, <&macro_press>;
 
             label = "MAC_SAVE";
+        };
+
+        colon_macro: colon_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_release &kp LSHFT &kp RSHFT>
+                , <&macro_tap &kp LS(SEMI)>
+                ;
         };
     };
 
