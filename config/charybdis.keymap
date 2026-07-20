@@ -449,8 +449,7 @@
         mac_save: mac_save {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>, <&macro_press>;
-
+            bindings = <&kp LG(S)>;
             label = "MAC_SAVE";
         };
 

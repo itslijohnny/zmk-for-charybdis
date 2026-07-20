@@ -55,5 +55,17 @@
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <20>;
     };
+
+    split_inputs {
+        compatible = "zmk,input-split-collection";
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_split: input_split_0@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+            status = "disabled";
+        };
+    };
 };
 
